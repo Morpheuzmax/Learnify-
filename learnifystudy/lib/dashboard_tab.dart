@@ -10,8 +10,12 @@ class DashboardTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // retrieves current user from Firebase Auth
+    // Ensure "displayName" is updated during registration (Sprint 1).
     final user = FirebaseAuth.instance.currentUser;
     final String displayName = user?.displayName ?? "Student";
+    // Fetches score for the current user.
+    // Todo: Ensure scoreManager calculates based on actual Quiz Submissions
     int myPercentage = ScoreManager.getOverallPercentage();
     StudentDatabase.registerOrUpdate(displayName, myPercentage);
     List<Map<String, dynamic>> leaderboard = StudentDatabase.allStudents;
