@@ -11,7 +11,7 @@ class ChatbotScreen extends StatefulWidget {
 }
 
 class _ChatbotScreenState extends State<ChatbotScreen> {
-  // Your API Key
+  // API Key
   static const String _apiKey = 'AIzaSyAhOnV6LqDDX3W0z8ADaKs2V3ntEv15q1I';
 
   late final GenerativeModel _model;
